@@ -1,0 +1,32 @@
+VAR
+   wordCount, vowelCount, characterCount: INTEGER;
+   sentence, currentChar: STRING;
+   sentenceLength: INTEGER;
+BEGIN
+   wordCount := 0;
+   vowelCount := 0;
+   characterCount := 0;
+
+   Read sentence;
+
+   sentenceLength := Length(sentence);
+
+   FOR i FROM 0 TO sentenceLength - 1 DO
+      characterCount := characterCount + 1;
+      currentChar := sentence[i];
+
+      IF currentChar IS A VOWEL THEN
+         vowelCount := vowelCount + 1;
+      END_IF
+
+      IF currentChar IS A SPACE THEN
+         wordCount := wordCount + 1;
+      END_IF
+   END_FOR
+
+   wordCount := wordCount + 1;
+
+   Write "Number of words:", wordCount;
+   Write "Number of vowels:", vowelCount;
+   Write "Total characters:", characterCount;
+END
